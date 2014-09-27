@@ -29,6 +29,7 @@ var Client = function (options) {
                              ('OPBEAT_STACK_TRACE_LIMIT' in env ? env.OPBEAT_STACK_TRACE_LIMIT :
                                Infinity);
   this.captureExceptions = (options.captureExceptions || env.OPBEAT_CAPTURE_EXCEPTIONS) != false;
+  this.logEnvironmentVars = !!(options.logEnvironmentVars || env.OPBEAT_LOG_ENVIRONMENT_VARS);
   this.exceptionLogLevel = options.exceptionLogLevel || env.OPBEAT_EXCEPTION_LOG_LEVEL || 'fatal'; // debug, info, warning, error, fatal
   this.api               = {
     host: options.apiHost || 'opbeat.com',
@@ -72,7 +73,7 @@ Client.prototype.captureError = function (err, options, callback) {
   } else if (!options) {
     options = {};
   } else if (options.request instanceof http.IncomingMessage) {
-    options = parsers.parseRequest(options.request, options);
+    options = parsers.parseRequest(this, options.request, options);
   }
 
   if (!(err instanceof Error)) {

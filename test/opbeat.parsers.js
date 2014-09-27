@@ -35,7 +35,7 @@ describe('opbeat.parsers', function () {
           encrypted: true
         }
       };
-      var parsed = opbeat.parsers.parseRequest(mockReq);
+      var parsed = opbeat.parsers.parseRequest({}, mockReq);
       assert('http' in parsed);
       assert.strictEqual(parsed.http.url, 'https://mattrobenolt.com/some/path?key=value');
     });

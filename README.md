@@ -147,6 +147,16 @@ Setting it to `0` will disable stack trace collection. Any finite integer
 value will be used as the maximum number of frames to collect. Setting
 it to `Infinity` means that all frames will be collected.
 
+### logEvironmentVars
+
+- **Type:** Boolean
+- **Default:** `false`
+- **Env:** `OPBEAT_LOG_ENVIRONMENT_VARS`
+
+When an error is sent on Opbeat, it's possible to record the associated
+environment variables along with the error. This is turned off by
+default. You can enable it using this setting.
+
 ## Events
 
 The client emits two events: `logged` and `error`.

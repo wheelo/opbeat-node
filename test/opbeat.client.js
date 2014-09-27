@@ -30,7 +30,8 @@ var optionFixtures = [
   ['hostname', 'HOSTNAME', os.hostname()],
   ['stackTraceLimit', 'STACK_TRACE_LIMIT', Infinity],
   ['captureExceptions', 'CAPTURE_EXCEPTIONS', true],
-  ['exceptionLogLevel', 'EXCEPTION_LOG_LEVEL', 'fatal']
+  ['exceptionLogLevel', 'EXCEPTION_LOG_LEVEL', 'fatal'],
+  ['logEnvironmentVars', 'LOG_ENVIRONMENT_VARS', false]
 ];
 
 var _oldConsoleInfo = logger.info;
