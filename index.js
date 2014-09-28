@@ -29,7 +29,7 @@ var Client = function (options) {
                              ('OPBEAT_STACK_TRACE_LIMIT' in env ? env.OPBEAT_STACK_TRACE_LIMIT :
                                Infinity);
   this.captureExceptions = (options.captureExceptions || env.OPBEAT_CAPTURE_EXCEPTIONS) != false;
-  this.logEnvironmentVars = !!(options.logEnvironmentVars || env.OPBEAT_LOG_ENVIRONMENT_VARS);
+  this.envWhitelist      = options.envWhitelist || env.OPBEAT_ENV_WHITELIST;
   this.exceptionLogLevel = options.exceptionLogLevel || env.OPBEAT_EXCEPTION_LOG_LEVEL || 'fatal'; // debug, info, warning, error, fatal
   this.api               = {
     host: options.apiHost || 'opbeat.com',

@@ -31,7 +31,7 @@ var optionFixtures = [
   ['stackTraceLimit', 'STACK_TRACE_LIMIT', Infinity],
   ['captureExceptions', 'CAPTURE_EXCEPTIONS', true],
   ['exceptionLogLevel', 'EXCEPTION_LOG_LEVEL', 'fatal'],
-  ['logEnvironmentVars', 'LOG_ENVIRONMENT_VARS', false]
+  ['envWhitelist', 'ENV_WHITELIST']
 ];
 
 var _oldConsoleInfo = logger.info;
