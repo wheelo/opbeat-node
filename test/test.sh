@@ -7,28 +7,28 @@ files () {
 }
 
 for file in $(files test/!(_*).js); do
-  echo "running: node --stack_trace_limit=100 -r longjohn $file"
-  node --stack_trace_limit=100 -r longjohn "$file" || exit $?;
+  echo "running: node $file"
+  node "$file" || exit $?;
 done
 
 for file in $(files test/instrumentation/!(_*).js); do
-  echo "running: node --stack_trace_limit=100 -r longjohn $file"
-  node --stack_trace_limit=100 -r longjohn "$file" || exit $?;
+  echo "running: node $file"
+  node "$file" || exit $?;
 done
 
 for file in $(files test/instrumentation/modules/!(_*).js); do
-  echo "running: node --stack_trace_limit=100 -r longjohn $file"
-  node --stack_trace_limit=100 -r longjohn "$file" || exit $?;
+  echo "running: node $file"
+  node "$file" || exit $?;
 done
 
 for file in $(files test/instrumentation/modules/http/!(_*).js); do
-  echo "running: node --stack_trace_limit=100 -r longjohn $file"
-  node --stack_trace_limit=100 -r longjohn "$file" || exit $?;
+  echo "running: node $file"
+  node "$file" || exit $?;
 done
 
 for file in $(files test/instrumentation/modules/mysql/!(_*).js); do
-  echo "running: node --stack_trace_limit=100 -r longjohn $file"
-  node --stack_trace_limit=100 -r longjohn "$file" || exit $?;
+  echo "running: node $file"
+  node "$file" || exit $?;
 done
 
 for file in $(files test/instrumentation/modules/bluebird/!(_*).js); do

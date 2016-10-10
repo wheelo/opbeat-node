@@ -1,17 +1,17 @@
 mysql:
   versions: ^2.0.0
   commands:
-    - node --stack_trace_limit=100 -r longjohn test/instrumentation/modules/mysql/mysql.js
-    - node --stack_trace_limit=100 -r longjohn test/instrumentation/modules/mysql/pool-release-1.js
+    - node test/instrumentation/modules/mysql/mysql.js
+    - node test/instrumentation/modules/mysql/pool-release-1.js
 redis:
   versions: ^2.0.0
-  commands: node --stack_trace_limit=100 -r longjohn test/instrumentation/modules/redis.js
+  commands: node test/instrumentation/modules/redis.js
 ioredis:
   versions: ^2.0.0
-  commands: node --stack_trace_limit=100 -r longjohn test/instrumentation/modules/ioredis.js
+  commands: node test/instrumentation/modules/ioredis.js
 pg:
   versions: >=4 <7
-  commands: node --stack_trace_limit=100 -r longjohn test/instrumentation/modules/pg/pg.js
+  commands: node test/instrumentation/modules/pg/pg.js
 bluebird:
   versions: ^3.0.0
   commands:
